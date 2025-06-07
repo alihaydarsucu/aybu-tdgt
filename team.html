@@ -8,75 +8,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="Images/logo.png">
-    <style>
-        /* Ek CSS düzenlemeleri */
-        .team-tabs {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 30px 0 40px;
-        }
-        
-        .team-tab {
-            padding: 10px 20px;
-            background: var(--ghost-white);
-            border: 2px solid var(--verdigris);
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .team-tab:hover, .team-tab.active {
-            background: var(--verdigris);
-            color: var(--ghost-white);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-        
-        .department-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .department {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--verdigris);
-        }
-        
-        .department:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .department-icon {
-            font-size: 2.5rem;
-            color: var(--verdigris);
-            margin-bottom: 20px;
-        }
-        
-        .department h3 {
-            color: var(--lapis-lazuli);
-            margin-bottom: 15px;
-        }
-        
-        .department p {
-            color: var(--bistre);
-            line-height: 1.7;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -104,7 +35,7 @@
                 <div class="mobile-menu-header">
                     <div class="mobile-logo">
                         <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
-                        <span>AYBÜ TDGT</span>
+                        <div class="logo-text"><span>AYBÜ TDGT</span></div>
                     </div>
                     <button class="mobile-menu-close" id="mobile-menu-close">
                         <i class="fas fa-times"></i>
@@ -120,9 +51,7 @@
                 </ul>
                 
                 <div class="mobile-social-links">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/aybu.tdgt/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
@@ -562,9 +491,7 @@
                     <p>Ankara Yıldırım Beyazıt Üniversitesi bünyesinde faaliyet gösteren Türk Dünyası Gençlik Topluluğu, dil, tarih ve kültürümüzü gelecek nesillere aktarmak için çalışmalar yürütmektedir.</p>
 
                     <div class="footer-social">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/aybu.tdgt/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
@@ -600,31 +527,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Birim seçici fonksiyonu
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.team-tab');
-            const members = document.querySelectorAll('.team-member');
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Aktif tabı güncelle
-                    tabs.forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const department = this.getAttribute('data-department');
-                    
-                    // Üyeleri göster/gizle
-                    members.forEach(member => {
-                        if(department === 'all' || member.getAttribute('data-department') === department) {
-                            member.style.display = 'block';
-                        } else {
-                            member.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
