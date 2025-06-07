@@ -1465,7 +1465,7 @@ textarea.form-control {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 684px) {
     .container {
         width: 95%;
         padding: 20px 10px;
@@ -1493,7 +1493,7 @@ textarea.form-control {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .hero h1 {
         font-size: 2.1rem;
     }

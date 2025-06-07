@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     // Sadece ekibimiz.html'de takım sekmelerini başlat
-    if (window.location.pathname.includes('ekibimiz.html')) {
+    if (window.location.pathname.includes('ekibimiz')) {
         initTeamTabs();
     }
 
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function setActiveMenuItem() {
         const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav-menu a');
-        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPath = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
         const currentHash = window.location.hash;
         
         // Önce tüm aktif sınıflarını kaldır
@@ -122,8 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } 
             // 2. Durum: Diğer sayfalardaki linkler (dergimiz.html, ekibimiz.html, iletisim.html)
             else if (linkHref.includes('.html')) {
-                // Linkin href'i ile şu anki sayfa eşleşiyorsa
-                if (linkHref === currentPath) {
+                if (linkHref.replace('.html', '') === currentPath) {
                     link.classList.add('active');
                 }
             }
@@ -179,4 +178,41 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu();
         }
     });
+
+    // İletişim formu gönderildikten sonra mesaj göster
+    const contactForm = document.querySelector('.form');
+    const successMessage = document.querySelector('.form-success');
+
+    if (contactForm && successMessage) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Formu otomatik gönderme
+
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    contactForm.reset();
+                    // 5 saniye sonra tekrar formu göster
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                        contactForm.style.display = 'block';
+                    }, 5000);
+                } else {
+                    alert("Form gönderilemedi. Lütfen tekrar deneyin.");
+                }
+            })
+            .catch(error => {
+                alert("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.");
+            });
+        });
+    }
+
 });

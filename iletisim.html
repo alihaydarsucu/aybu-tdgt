@@ -133,22 +133,25 @@
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <form class="form">
+                <form class="form" action="https://formsubmit.co/6e89de8abd4eb2306b239405fee19cd0" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
                     <div class="form-group">
                         <label for="name">Adınız Soyadınız</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input type="text" id="name" name="name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="email">E-posta Adresiniz</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="subject">Konu</label>
-                        <input type="text" id="subject" class="form-control" required>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Mesajınız</label>
-                        <textarea id="message" class="form-control" required></textarea>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
                     </div>
                     <button type="submit" class="btn">Gönder</button>
                 </form>
