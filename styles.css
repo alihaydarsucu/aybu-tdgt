@@ -925,7 +925,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(rgba(15, 69, 119, 0.5), rgb(13, 76, 134)), url('Images/Hero/team-hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(15, 69, 119, 0.5), rgb(13, 76, 134)), url('Images/Hero/team-hero.webp') no-repeat center center/cover;
     color: var(--ghost-white);
     text-align: center;
 }
