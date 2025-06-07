@@ -435,7 +435,7 @@ a:hover {
     max-width: 800px;
 }
 
-.hero h1 {
+.hero-title {
     font-size: 3.5rem;
     margin-bottom: 20px;
     line-height: 1.2;
@@ -710,9 +710,9 @@ a:hover {
 }
 
 .magazine-cover {
-    width: 300px;
-    height: auto;
-    transition: transform 0.3s ease;
+  width: 300px;
+  aspect-ratio: 3 / 2; /* 600 / 400 = 1.5 */
+  object-fit: cover; /* Optional: trims image to fill container */
 }
 
 .magazine-cover:hover {

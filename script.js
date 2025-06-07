@@ -1,56 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobil menü elemanları
+    // mobil menü elemanları seç
     const navToggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
     
-    // Mobil menüyü aç/kapat
+    // mobil menüyü açar
     navToggle.addEventListener('click', function() {
         mobileMenu.classList.add('active');
         mobileMenuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
     
-    // Mobil menüyü kapatma fonksiyonu
+    // mobil menüyü kapatır
     function closeMobileMenu() {
         mobileMenu.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
     
-    // Menü kapatma olayları
+    // menüyü kapatma olaylarını ekler
     mobileMenuClose.addEventListener('click', closeMobileMenu);
     mobileMenuOverlay.addEventListener('click', closeMobileMenu);
     
-    // ESC tuşu ile menüyü kapat
+    // ESC tuşu ile menüyü kapatır
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
             closeMobileMenu();
         }
     });
     
-    // Menüdeki bağlantılara tıklanınca menüyü kapat
+    // menüdeki bağlantıya tıklayınca menüyü kapatır
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-menu a');
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
 
-    // Takım sekmelerini başlat
+    // takım sekmelerini başlatır
     function initTeamTabs() {
         const tabs = document.querySelectorAll('.team-tab');
         const members = document.querySelectorAll('.team-member');
         
-        if (tabs.length > 0) { // Sadece ekibimiz.html'de çalışsın
+        if (tabs.length > 0) { // sadece ekibimiz.html'de çalışır
             tabs.forEach(tab => {
                 tab.addEventListener('click', function() {
-                    // Aktif sekmeyi güncelle
+                    // aktif sekmeyi günceller
                     tabs.forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
                     const department = this.getAttribute('data-department');
                     
-                    // Üyeleri göster/gizle
+                    // üyeleri gösterir veya gizler
                     members.forEach(member => {
                         if(department === 'all' || member.getAttribute('data-department') === department) {
                             member.style.display = 'block';
@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    // Sadece ekibimiz.html'de takım sekmelerini başlat
+    // sadece ekibimiz.html'de takım sekmelerini başlatır
     if (window.location.pathname.includes('ekibimiz')) {
         initTeamTabs();
     }
 
-    // Header scroll efekti
+    // header'a scroll efekti ekler
     window.addEventListener('scroll', function() {
         const header = document.getElementById('header');
         if (window.scrollY > 100) {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Yukarı çık butonu
+    // yukarı çık butonunu gösterir veya gizler
     const backToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
@@ -97,58 +97,120 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     /**
-     * Menüde aktif olan bağlantıyı belirler ve 'active' sınıfını ekler.
-     * Sayfa yolu ve hash'e göre uygun menü öğesini vurgular.
+     * menüde aktif olan bağlantıyı belirler ve 'active' sınıfı ekler
+     * sayfa yolu ve hash'e göre uygun menü öğesini vurgular
      */
     function setActiveMenuItem() {
         const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav-menu a');
-        const currentPath = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
-        const currentHash = window.location.hash;
-        
-        // Önce tüm aktif sınıflarını kaldır
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        // Tüm linkleri kontrol et
-        navLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            
-            // 1. Durum: Şu anki sayfa index.html ve hash var
-            if ((currentPath === 'index.html' || currentPath === '') && currentHash) {
-                if (linkHref === currentHash) {
+        const currentPath = window.location.pathname.toLowerCase();
+        const currentHash = window.location.hash.toLowerCase();
+
+        // 1. Tüm aktif sınıfları temizle
+        navLinks.forEach(link => link.classList.remove('active'));
+
+        // 2. Ana sayfa kontrolü (Neocities özel)
+        const isHomePage = currentPath === '/' || 
+                        currentPath === '/index.html' || 
+                        currentPath.endsWith('/index.html') || 
+                        currentPath === '' ||
+                        currentPath.split('/').filter(Boolean).length === 0;
+
+        if (isHomePage) {
+            // ANA SAYFA LOGİĞİ (Section takibi)
+            const sections = document.querySelectorAll('section[id]');
+            let activeSection = null;
+            let maxVisibility = 0;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const visibilityRatio = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+                
+                if (visibilityRatio > maxVisibility && visibilityRatio > window.innerHeight * 0.3) {
+                    maxVisibility = visibilityRatio;
+                    activeSection = section.id;
+                }
+            });
+
+            // Fallback: Scroll pozisyonuna göre
+            if (!activeSection) {
+                const scrollPosition = window.scrollY;
+                sections.forEach(section => {
+                    if (section.offsetTop <= scrollPosition + 100) {
+                        activeSection = section.id;
+                    }
+                });
+            }
+
+            // Aktif menüyü ayarla
+            if (activeSection) {
+                document.querySelectorAll(`.nav-menu a[href="#${activeSection}"], .mobile-nav-menu a[href="#${activeSection}"]`)
+                    .forEach(link => link.classList.add('active'));
+            }
+
+            // Son çare: Hero section
+            if (!document.querySelector('.nav-menu a.active, .mobile-nav-menu a.active')) {
+                document.querySelectorAll('.nav-menu a[href="#hero"], .mobile-nav-menu a[href="#hero"]')
+                    .forEach(link => link.classList.add('active'));
+            }
+
+        } else {
+            // DİĞER SAYFALAR (Neocities için optimize edildi)
+            const currentPage = currentPath.split('/').pop().replace('.html', '');
+
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href').toLowerCase();
+                const linkPage = linkPath.replace('.html', '').split('#')[0];
+
+                // Karşılaştırma mantığı:
+                // 1. /dergimiz ↔ dergimiz.html
+                // 2. /ekibimiz ↔ ekibimiz.html
+                // 3. /iletisim ↔ iletisim.html
+                if (linkPage === currentPage) {
                     link.classList.add('active');
                 }
-            } 
-            // 2. Durum: Diğer sayfalardaki linkler (dergimiz.html, ekibimiz.html, iletisim.html)
-            else if (linkHref.includes('.html')) {
-                if (linkHref.replace('.html', '') === currentPath) {
-                    link.classList.add('active');
-                }
+            });
+
+            // Ek güvenlik kontrolü
+            if (!document.querySelector('.nav-menu a.active, .mobile-nav-menu a.active')) {
+                const fallbackPage = currentPage + '.html';
+                document.querySelectorAll(`.nav-menu a[href="${fallbackPage}"], .mobile-nav-menu a[href="${fallbackPage}"]`)
+                    .forEach(link => link.classList.add('active'));
             }
-            // 3. Durum: Ana sayfa ve hash yoksa (varsayılan olarak #hero aktif)
-            else if ((currentPath === 'index.html' || currentPath === '') && !currentHash && linkHref === '#hero') {
-                link.classList.add('active');
-            }
+        }
+
+        // Debug çıktısı
+        console.log('Active Menu Item Set:', {
+            currentPath,
+            isHomePage,
+            activeLinks: document.querySelectorAll('.nav-menu a.active, .mobile-nav-menu a.active').length
         });
     }
-    // Sayfa yüklendiğinde ve hash değiştiğinde aktif menüyü güncelle
+
+    // sayfa yüklendiğinde, değiştirildiğinde ve hash değiştiğinde aktif menüyü günceller
     setActiveMenuItem();
     window.addEventListener('hashchange', setActiveMenuItem);
+    window.addEventListener('popstate', setActiveMenuItem);
 
-    // Sadece ana sayfada scroll ile aktif menüyü güncelle
-    if (window.location.pathname.includes('index.html') || 
-        window.location.pathname === '/' || 
-        window.location.pathname === '') {
-        window.addEventListener('scroll', function() {
-            setActiveMenuItem();
-        });
-    }
+    // sadece ana sayfada scroll ile aktif menüyü günceller
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        const isHomePage = window.location.pathname === '/' || 
+                        window.location.pathname === '/index.html' || 
+                        window.location.pathname.endsWith('/index.html') || 
+                        window.location.pathname === '' ||
+                        !window.location.pathname.includes('.html');
+        
+        if (isHomePage) {
+            // Scroll performansı için debounce
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(setActiveMenuItem, 50);
+        }
+    });
 
-    // Tüm anchor linkler için yumuşak kaydırma
+    // tüm anchor linkler için yumuşak kaydırma ekler
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            // Başka bir sayfaya giden linklerde yumuşak kaydırma yapma
+            // başka bir sayfaya giden linklerde yumuşak kaydırma yapmaz
             if (this.getAttribute('href').startsWith('#') && 
                 !this.getAttribute('href').endsWith('.html')) {
                 e.preventDefault();
@@ -162,30 +224,30 @@ document.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth'
                     });
                     
-                    // URL hash'ini güncelle (tarayıcı geçmişi için)
+                    // url hash'ini günceller
                     history.pushState(null, null, targetId);
                     
-                    // Aktif menüyü güncelle
+                    // aktif menüyü günceller
                     setTimeout(setActiveMenuItem, 300);
                 }
             }
         });
     });
 
-    // Masaüstüne geçince mobil menüyü kapat
+    // masaüstüne geçince mobil menüyü kapatır
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
             closeMobileMenu();
         }
     });
 
-    // İletişim formu gönderildikten sonra mesaj göster
+    // iletişim formu gönderildikten sonra mesaj gösterir
     const contactForm = document.querySelector('.form');
     const successMessage = document.querySelector('.form-success');
 
     if (contactForm && successMessage) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Formu otomatik gönderme
+            e.preventDefault(); // formu otomatik göndermez
 
             const formData = new FormData(contactForm);
             fetch(contactForm.action, {
@@ -200,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     contactForm.style.display = 'none';
                     successMessage.style.display = 'block';
                     contactForm.reset();
-                    // 5 saniye sonra tekrar formu göster
+                    // 5 saniye sonra tekrar formu gösterir
                     setTimeout(() => {
                         successMessage.style.display = 'none';
                         contactForm.style.display = 'block';

@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ankara Yıldırım Beyazıt Üniversitesi Türk Dünyası Gençlik Topluluğu resmi web sitesi">
     <meta name="keywords" content="AYBÜ, Türk Dünyası, Gençlik Topluluğu, Türk Kültürü, Türk Dili, Türk Tarihi">
+    <meta name="author" content="AYBÜ Türk Dünyası Gençlik Topluluğu">
+    <meta property="og:title" content="AYBÜ Türk Dünyası Gençlik Topluluğu">
+    <meta property="og:description" content="Ankara Yıldırım Beyazıt Üniversitesi Türk Dünyası Gençlik Topluluğu resmi web sitesi">
+    <meta property="og:type" content="website">
     <title>AYBÜ Türk Dünyası Gençlik Topluluğu</title>
+    <link rel="preload" as="image" href="Images/Hero/mainpage-hero.webp">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="Images/logo.png">
+    <link rel="icon" type="image/x-icon" href="Images/logo.webp">
 </head>
 <body>
     <!-- Header -->
@@ -17,7 +22,7 @@
     <div class="container">
         <nav class="navbar">
             <div class="logo">
-                <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                <img src="Images/logo.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
                 <div class="logo-text">
                     <span class="main"><a href="#hero" style="text-decoration: none; color: inherit;">AYBÜ TDGT</a></span>
                     <span class="sub">TÜRK DÜNYASI GENÇLİK TOPLULUĞU</span>
@@ -36,10 +41,10 @@
             <div class="mobile-menu" id="mobile-menu">
                 <div class="mobile-menu-header">
                     <div class="mobile-logo">
-                        <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                        <img src="Images/logo.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
                         <div class="logo-text"><span>AYBÜ TDGT</span></div>
                     </div>
-                    <button class="mobile-menu-close" id="mobile-menu-close">
+                    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Mobil menüyü kapat">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
@@ -74,9 +79,9 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Türk Dünyasının <span class="accent-text">Genç Sesleri</span></h1>
+                <h1 class="hero-title">Türk Dünyasının <span class="accent-text">Genç Sesleri</span></h1>
                 <p>Ankara Yıldırım Beyazıt Üniversitesi Türk Dünyası Gençlik Topluluğu olarak dil, tarih ve kültürümüzü gelecek nesillere aktarmak için çalışıyoruz.</p>
-                <div class="hero-btns">
+                <div class="hero-btns"></div>
                     <a href="dergimiz.html" class="btn ">Dergimize Göz Atın</a>
                     <a href="ekibimiz.html" class="btn btn-outline">Ekibimizi Tanıyın</a>
                 </div>
@@ -100,7 +105,7 @@
                     <p>Çeşitli etkinlikler, seminerler, geziler ve yayınlarla üniversitemizde ve Ankara'daki diğer üniversitelerde faaliyetlerimizi sürdürmekteyiz.</p>
                 </div>
                 <div class="about-image">
-                    <img src="Images/about.jpeg" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                    <img src="Images/about.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
                 </div>
             </div>
 
@@ -186,7 +191,7 @@
 
             <div class="activity-item">
                 <div class="activity-img">
-                    <img src="Images/Activities/bursa_trip.jpg" alt="Bursa Kültür Gezisi">
+                    <img src="Images/Activities/bursa_trip.webp" alt="Bursa Kültür Gezisi">
                 </div>
                 <div class="activity-content">
                     <h3>Bursa Kültür Gezisi</h3>
@@ -200,7 +205,7 @@
 
             <div class="activity-item reverse">
                 <div class="activity-img">
-                    <img src="Images/Activities/18_march.jpg" alt="18 Mart Tiyatro Etkinliği">
+                    <img src="Images/Activities/18_march.webp" alt="18 Mart Tiyatro Etkinliği">
                 </div>
                 <div class="activity-content">
                     <h3>18 Mart Tiyatro Etkinliği</h3>
@@ -214,7 +219,7 @@
 
             <div class="activity-item" id="seminar">
                 <div class="activity-img">
-                    <img src="Images/Activities/turklerin_gelecegi.jpg" alt="Türklerin Geleceği Semineri">
+                    <img src="Images/Activities/turklerin_gelecegi.webp" alt="Türklerin Geleceği Semineri">
                 </div>
                 <div class="activity-content">
                     <h3>Türklerin Geleceği Semineri</h3>
@@ -237,12 +242,12 @@
             </div>
 
             <div class="magazine-cta-grid">
-                <img src="Images/Magazine/magazine_placeholder_1.png" alt="Ata Toprak Dergisi Kapak 1" class="magazine-cover" /> 
+                <img src="Images/Magazine/magazine_placeholder_1.webp" alt="Ata Toprak Dergisi Kapak 1" class="magazine-cover" /> 
                 <div class="magazine-info-block">
                     <p>Topluluğumuzun özenle hazırladığı Ata Toprak Dergisi'nin tüm sayılarına ulaşabilir, Türk dünyasına dair içeriklere göz atabilirsiniz.</p>
                     <a href="dergimiz.html" class="btn">Dergi Arşivi</a>
                 </div>
-                <img src="Images/Magazine/magazine_placeholder_2.png" alt="Ata Toprak Dergisi Kapak 2" class="magazine-cover" />
+                <img src="Images/Magazine/magazine_placeholder_2.webp" alt="Ata Toprak Dergisi Kapak 2" class="magazine-cover" />
             </div>
         </div>
     </section>
@@ -266,7 +271,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h4>Hızlı Bağlantılar</h4>
+                    <h1>Hızlı Bağlantılar</h1>
                     <ul>
                         <li><a href="#hero">Ana Sayfa</a></li>
                         <li><a href="#hakkimizda">Hakkımızda</a></li>
@@ -277,7 +282,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h4>İletişim</h4>
+                    <h1>İletişim</h1>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Ankara Yıldırım Beyazıt Üniversitesi, Ankara</li>
                         <li><i class="fas fa-envelope"></i> aybuturkdunyasi@gmail.com </li>
