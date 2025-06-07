@@ -24,6 +24,40 @@ function initTeamTabs() {
     }
 }
 
+function setActiveMenuItem() {
+    const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav-menu a');
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentHash = window.location.hash;
+    
+    // Önce tüm aktif sınıflarını kaldır
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // Tüm linkleri kontrol et
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        
+        // 1. Durum: Şu anki sayfa index.html ve hash var
+        if ((currentPath === 'index.html' || currentPath === '') && currentHash) {
+            if (linkHref === currentHash) {
+                link.classList.add('active');
+            }
+        } 
+        // 2. Durum: Diğer sayfalardaki linkler (magazine.html, team.html, contact.html)
+        else if (linkHref.includes('.html')) {
+            // Linkin href'i ile şu anki sayfa eşleşiyorsa
+            if (linkHref === currentPath) {
+                link.classList.add('active');
+            }
+        }
+        // 3. Durum: Ana sayfa ve hash yoksa (varsayılan olarak #hero aktif)
+        else if ((currentPath === 'index.html' || currentPath === '') && !currentHash && linkHref === '#hero') {
+            link.classList.add('active');
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu elements
     const navToggle = document.getElementById('nav-toggle');
@@ -93,46 +127,22 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
+        
     });
-
-    // Aktif menü öğesini belirleme fonksiyonu
-    function setActiveMenuItem() {
-        const navLinks = document.querySelectorAll('.nav-menu a, .mobile-nav-menu a');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const currentHash = window.location.hash;
-        
-        // Önce tüm aktif sınıflarını kaldır
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        // Eğer hash varsa (index.html sayfasındaki bölümler için)
-        if (currentHash) {
-            const activeLink = document.querySelector(`.nav-menu a[href="${currentHash}"], .mobile-nav-menu a[href="${currentHash}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-        } 
-        // Eğer hash yoksa, hangi sayfada olduğumuza bak
-        else {
-            navLinks.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                // Link bir sayfaya mı gidiyor yoksa bölüme mi?
-                if (linkPage.includes('.html')) {
-                    if (linkPage === currentPage) {
-                        link.classList.add('active');
-                    }
-                } else if (currentPage === 'index.html' && linkPage === '#hero') {
-                    // Ana sayfada ve hash yoksa Ana Sayfa linkini aktif yap
-                    link.classList.add('active');
-                }
-            });
-        }
-    }
+    
 
     // Sayfa yüklendiğinde ve hash değiştiğinde aktif menüyü güncelle
     setActiveMenuItem();
     window.addEventListener('hashchange', setActiveMenuItem);
+
+    // Sadece ana sayfada scroll ile aktif menüyü güncelle
+    if (window.location.pathname.includes('index.html') || 
+        window.location.pathname === '/' || 
+        window.location.pathname === '') {
+        window.addEventListener('scroll', function() {
+            setActiveMenuItem();
+        });
+    }
 
     // Smooth scroll for all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -150,6 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                    
+                    // URL hash'ini güncelle (tarayıcı geçmişi için)
+                    history.pushState(null, null, targetId);
                     
                     // Aktif menüyü güncelle
                     setTimeout(setActiveMenuItem, 300);

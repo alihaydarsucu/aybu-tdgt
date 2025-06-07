@@ -87,6 +87,8 @@ a:hover {
     border: 2px solid var(--verdigris);
     margin: 10px 5px;
     box-shadow: 0 2px 8px rgba(40, 175, 176, 0.08);
+    width: 250px; /* Set a strict width for all buttons */
+    text-align: center;
 }
 
 .btn:hover,
@@ -947,9 +949,7 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     visibility: visible;
 }
 
-.back-to-top:hover {
-    background-color: var(--lapis-lazuli);
-}
+
 
 /* Magazine Page Styles */
 .section-hero {
