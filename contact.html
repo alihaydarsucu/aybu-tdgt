@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | AYBÜ Türk Dünyası Gençlik Topluluğu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="Images/logo.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                    <div class="logo-text">
+                        <span class="main"><a href="index.html" style="text-decoration: none; color: inherit;">AYBÜ TDGT</a></span>
+                        <span class="sub">TÜRK DÜNYASI GENÇLİK TOPLULUĞU</span>
+                    </div>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.html#about">Hakkımızda</a></li>
+                    <li><a href="magazine.html">Dergimiz</a></li>
+                    <li><a href="team.html">Ekibimiz</a></li>
+                    <li><a href="contact.html" class="active">İletişim</a></li>
+                </ul>
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="section-hero" id="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>İletişim</h1>
+                <p>Bize ulaşmak için aşağıdaki iletişim bilgilerini kullanabilir veya iletişim formunu doldurabilirsiniz.</p>
+            </div>
+        </div>
+        <div class="custom-wave traditional-wave"></div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="section" id="contact-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bize Ulaşın</h2>
+                <p>Güncel etkinliklerimiz ve çalışmalarımızdan haberdar olmak için bizi takip edin.</p>
+                <p>Sorularınız, önerileriniz veya katkılarınız için iletişime geçebilirsiniz.</p>
+            </div>
+
+            <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h3>Instagram</h3>
+                <p><a href="https://instagram.com/aybutdgt" target="_blank">@aybutdgt</a></p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>E-posta</h3>
+                <p><a href="mailto:aybutdgt@gmail.com">aybutdgt@gmail.com</a></p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <p><a href="https://linkedin.com/company/aybutdgt" target="_blank">AYBÜ TDGT</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section section-bg" id="contact-form">
+        <div class="custom-pattern kilim"></div>
+        <div class="container">
+            <div class="form-container">
+                <div class="form-info">
+                    <h2>Mesaj Gönderin</h2>
+                    <p>Topluluğumuzla ilgili her türlü soru, öneri ve işbirliği teklifleriniz için bize ulaşabilirsiniz. 
+                    Dergimize katkıda bulunmak, etkinliklerimize konuşmacı olarak katılmak veya gönüllü ekibimize dahil olmak isterseniz 
+                    lütfen iletişim formunu doldurunuz. En kısa sürede sizinle iletişime geçeceğiz.</p>
+                    <div class="contact-highlights">
+                        <p><i class="fas fa-check-circle"></i> Akademik işbirlikleri için destek</p>
+                        <p><i class="fas fa-check-circle"></i> Gönüllülük fırsatları hakkında bilgilendirme</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="name">Adınız Soyadınız</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-posta Adresiniz</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Konu</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Gönder</button>
+                </form>
+                <div class="form-success" style="display: none;">
+                     <i class="fas fa-check-circle"></i>
+                    <h3>Mesajınız iletildi!</h3>
+                    <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="logo-text" style="margin-bottom: 20px;">
+                        <span class="main">AYBÜ TDGT</span>
+                        <span class="sub">TÜRK DÜNYASI GENÇLİK TOPLULUĞU</span>
+                    </div>
+                    <p>Ankara Yıldırım Beyazıt Üniversitesi bünyesinde faaliyet gösteren Türk Dünyası Gençlik Topluluğu, dil, tarih ve kültürümüzü gelecek nesillere aktarmak için çalışmalar yürütmektedir.</p>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="index.html#about">Hakkımızda</a></li>
+                        <li><a href="magazine.html">Dergimiz</a></li>
+                        <li><a href="team.html">Ekibimiz</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>İletişim</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Ankara Yıldırım Beyazıt Üniversitesi, Ankara</li>
+                        <li><i class="fas fa-envelope"></i> aybutdgt@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 AYBÜ Türk Dünyası Gençlik Topluluğu. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+
+        <a href="#" class="back-to-top" id="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
