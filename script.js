@@ -1,58 +1,40 @@
+// Mobile menu toggle function
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menü ve overlay elementlerini seç
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-    const mobileOverlay = document.getElementById('mobile-menu-overlay');
-    const navLinks = document.querySelectorAll('.nav-menu a');
     
-    // Menü toggle fonksiyonu
-    function toggleMenu() {
+    navToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
-        mobileOverlay.classList.toggle('active');
-        
-        // İkon değiştirme
-        const icon = navToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    }
-    
-    // Hamburger menüye tıklama
-    navToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleMenu();
+        this.querySelector('i').classList.toggle('fa-times');
     });
-    
-    // Overlay'e tıklayarak menüyü kapatma
-    mobileOverlay.addEventListener('click', toggleMenu);
-    
-    // Menü linklerine tıklayarak menüyü kapatma
+
+    // Close mobile menu when menu links are clicked
+    const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (navMenu.classList.contains('active')) {
-                toggleMenu();
-            }
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.querySelector('i').classList.remove('fa-times');
         });
     });
 
-    // Sayfa dışına tıklayarak menüyü kapatma
-    document.addEventListener('click', function(e) {
-        if (navMenu.classList.contains('active') && 
-            !e.target.closest('.nav-menu') && 
-            !e.target.closest('#nav-toggle')) {
-            toggleMenu();
-        }
-    });
-
-    // Scroll ile header efekti
+    // Change header for scroll effect
     window.addEventListener('scroll', function() {
         const header = document.getElementById('header');
-        header.classList.toggle('header-scrolled', window.scrollY > 100);
+        if (window.scrollY > 100) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
     });
 
     // Back to top button
     const backToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', function() {
-        backToTop.classList.toggle('active', window.scrollY > 300);
+        if (window.scrollY > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
     });
 
     backToTop.addEventListener('click', function(e) {
@@ -63,17 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Aktif menü item'ını güncelleme
-    function updateActiveMenuItem() {
-        const sections = document.querySelectorAll('section');
+    // Update active menu item
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', function() {
         let current = '';
         
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
             
-            if (window.scrollY >= (sectionTop - 300) && 
-                window.scrollY < (sectionTop + sectionHeight - 300)) {
+            if (pageYOffset >= (sectionTop - 300)) {
                 current = section.getAttribute('id');
             }
         });
@@ -84,11 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 link.classList.add('active');
             }
         });
-    }
-
-    // Sayfa yüklendiğinde ve scroll olduğunda aktif menüyü güncelle
-    window.addEventListener('scroll', updateActiveMenuItem);
-    window.addEventListener('load', updateActiveMenuItem);
+    });
 
     // Smooth scroll function
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -103,13 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // URL'de hash güncelleme (sayfa yenilenmesini engellemek için)
-                if (history.pushState) {
-                    history.pushState(null, null, targetId);
-                } else {
-                    location.hash = targetId;
-                }
             }
         });
     });
