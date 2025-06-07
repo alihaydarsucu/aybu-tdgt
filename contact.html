@@ -12,28 +12,63 @@
 <body>
     <!-- Header -->
     <header class="header" id="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
-                    <div class="logo-text">
-                        <span class="main"><a href="index.html" style="text-decoration: none; color: inherit;">AYBÜ TDGT</a></span>
-                        <span class="sub">TÜRK DÜNYASI GENÇLİK TOPLULUĞU</span>
-                    </div>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                <div class="logo-text">
+                    <span class="main"><a href="#hero" style="text-decoration: none; color: inherit;">AYBÜ TDGT</a></span>
+                    <span class="sub">TÜRK DÜNYASI GENÇLİK TOPLULUĞU</span>
                 </div>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index.html">Ana Sayfa</a></li>
+            </div>
+            
+            <!-- Mobil menü toggle butonu -->
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <!-- Mobil menü overlay -->
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+            
+            <!-- Mobil menü içeriği -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="mobile-menu-header">
+                    <div class="mobile-logo">
+                        <img src="Images/logo.png" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                        <span>AYBÜ TDGT</span>
+                    </div>
+                    <button class="mobile-menu-close" id="mobile-menu-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <ul class="mobile-nav-menu">
+                    <li><a href="index.html#hero" class="active">Ana Sayfa</a></li>
                     <li><a href="index.html#about">Hakkımızda</a></li>
                     <li><a href="magazine.html">Dergimiz</a></li>
                     <li><a href="team.html">Ekibimiz</a></li>
-                    <li><a href="contact.html" class="active">İletişim</a></li>
+                    <li><a href="#contact-hero">İletişim</a></li>
                 </ul>
-                <div class="nav-toggle" id="nav-toggle">
-                    <i class="fas fa-bars"></i>
+                
+                <div class="mobile-social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+            
+            <!-- Normal masaüstü menü -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#hero" class="active">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Hakkımızda</a></li>
+                <li><a href="magazine.html">Dergimiz</a></li>
+                <li><a href="team.html">Ekibimiz</a></li>
+                <li><a href="#contact-hero">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Contact Hero -->
     <section class="section-hero" id="contact-hero">

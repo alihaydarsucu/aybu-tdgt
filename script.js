@@ -1,20 +1,38 @@
 // Mobile menu toggle function
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
     
+    // Hamburger menüyü aç
     navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        this.querySelector('i').classList.toggle('fa-times');
+        mobileMenu.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
-
-    // Close mobile menu when menu links are clicked
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.querySelector('i').classList.remove('fa-times');
-        });
+    
+    // Mobil menüyü kapat
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    
+    // ESC tuşu ile kapat
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Mobil menü linklerine tıklandığında menüyü kapat
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-menu a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
     });
 
     // Change header for scroll effect
