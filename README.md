@@ -28,35 +28,19 @@ This website serves as the official platform for the **AYBÜ Turkish World Youth
 ## **📁 Project Structure**
 
 ```
-tdgt.github.io/
-├── Images/
-│   ├── logo.webp
-│   ├── about.webp
-│   ├── Hero/
-│   │   ├── mainpage-hero.webp
-│   │   ├── contact-hero.webp
-│   │   ├── magazine-hero.webp
-│   │   └── team-hero.webp
-│   ├── Activities/
-│   │   ├── bursa_trip.webp
-│   │   ├── 18_march.webp
-│   │   └── turklerin_gelecegi.webp
-│   ├── Magazine/
-│   │   ├── magazine_placeholder_1.webp
-│   │   ├── magazine_placeholder_2.webp
-│   │   ├── sayı-1-placeholder.webp
-│   │   ├── sayı-2-placeholder.webp
-│   │   └── sayı-3-placeholder.webp
-│   └── Team Members/
-│       ├── empty_profile_female.webp
-│       └── empty_profile_male.webp
+AYBU-TDGT-Website/
+├── index.html              # Main homepage with hero section and activities
+├── dergimiz.html           # Magazine archive and issues
+├── ekibimiz.html           # Team members and departments
+├── iletisim.html           # Contact form and social links
 ├── styles.css
 ├── script.js
-├── index.html
-├── dergimiz.html
-├── ekibimiz.html
-├── iletisim.html
-├── README.md
+└── Images/                 # All visual assets
+    ├── logo.webp           # Community logo
+    ├── Hero/               # Hero section backgrounds
+    ├── Team Members/       # Profile pictures
+    ├── Activities/         # Event photos
+    └── Magazine/
 └── (other assets/files as needed)
 ```
 
