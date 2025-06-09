@@ -79,4 +79,4 @@ To enhance user experience and engagement, consider:
 
 This website is a labor of love by students passionate about Turkish heritage. We welcome feedback and collaboration to make it even better!
 
-**Thank you for visiting!** 🇹🇷✨
+**Thank you for visiting!** ✨
