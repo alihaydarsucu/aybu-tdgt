@@ -21,7 +21,7 @@
     <div class="container">
         <nav class="navbar">
             <div class="logo">
-                <img src="Images/logo.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                <img src="Images/logo.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu">
                 <div class="logo-text">
                     <span class="main"><a href="#hero" style="text-decoration: none; color: inherit;">AYBÜ TDGT</a></span>
                     <span class="sub">TÜRK DÜNYASI GENÇLİK TOPLULUĞU</span>
@@ -40,7 +40,7 @@
             <div class="mobile-menu" id="mobile-menu">
                 <div class="mobile-menu-header">
                     <div class="mobile-logo">
-                        <img src="Images/logo.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu" />
+                        <img src="Images/logo.webp" alt="AYBÜ Türk Dünyası Gençlik Topluluğu">
                         <div class="logo-text"><span>AYBÜ TDGT</span></div>
                     </div>
                     <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Mobil menüyü kapat">
@@ -49,10 +49,10 @@
                 </div>
                 
                 <ul class="mobile-nav-menu">
-                    <li><a href="index.html#hero" class="active">Ana Sayfa</a></li>
+                    <li><a href="index.html#hero" class="">Ana Sayfa</a></li>
                     <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
                     <li><a href="dergimiz.html">Dergimiz</a></li>
-                    <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                    <li><a href="ekibimiz.html" class="active">Ekibimiz</a></li>
                     <li><a href="iletisim.html">İletişim</a></li>
                 </ul>
                 
@@ -64,7 +64,7 @@
             
             <!-- Normal masaüstü menü -->
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html#hero" class="active">Ana Sayfa</a></li>
+                <li><a href="index.html#hero" class="">Ana Sayfa</a></li>
                 <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
                 <li><a href="dergimiz.html">Dergimiz</a></li>
                 <li><a href="#team-hero">Ekibimiz</a></li>
@@ -96,330 +96,20 @@
             </div>
             
             <!-- Birim Seçici -->
-            <div class="team-tabs">
-                <div class="team-tab active" data-department="all">Tümü</div>
-                <div class="team-tab" data-department="publishing">Yayın Birimi</div>
-                <div class="team-tab" data-department="events">Etkinlik Birimi</div>
-                <div class="team-tab" data-department="membership">Üye İlişkileri</div>
-                <div class="team-tab" data-department="media">Medya ve İletişim</div>
-            </div>
+            <div class="team-tabs"><div class="team-tab active" data-department="all">Tümü</div><div class="team-tab" data-department="Duyuru ">Duyuru </div><div class="team-tab" data-department="Yönetim">Yönetim</div></div>
 
             <div class="team-grid">
-                <!-- Yayın Birimi (6 üye) -->
-                <div class="team-member" data-department="publishing">
+                <div class="team-member" data-department="Yönetim" style="display: block;">
                     <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Yayın Birimi">
+                        <img src="Images/Team Members/eren.png" alt="Yönetim">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Yayın Birimi</p>
-                        <p class="team-university">Türk Dili ve Edebiyatı - 4. Sınıf</p>
+                        <h3 class="team-name">Eren Köçmen</h3>
+                        <p class="team-role">Başkan</p>
+                        <p class="team-university">Uluslarası İlişkiler</p>
                         <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="publishing">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Yayın Birimi">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Yayın Birimi</p>
-                        <p class="team-university">Tarih Bölümü - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="publishing">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Yayın Birimi">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Yayın Birimi</p>
-                        <p class="team-university">Dil Bilimi - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="publishing">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Yayın Birimi">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Yayın Birimi</p>
-                        <p class="team-university">Sosyoloji - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="publishing">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Yayın Birimi">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Yayın Birimi</p>
-                        <p class="team-university">Türkçe Öğretmenliği - 4. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="publishing">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Yayın Birimi">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Yayın Birimi</p>
-                        <p class="team-university">Kültürel Çalışmalar - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Etkinlik Birimi (5 üye) -->
-                <div class="team-member" data-department="events">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Etkinlik Sorumlusu">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Etkinlik Birimi</p>
-                        <p class="team-university">Uluslararası İlişkiler - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="events">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Etkinlik Sorumlusu">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Etkinlik Birimi</p>
-                        <p class="team-university">Sosyal Hizmetler - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="events">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Etkinlik Sorumlusu">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Etkinlik Birimi</p>
-                        <p class="team-university">İşletme - 4. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="events">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Etkinlik Sorumlusu">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Etkinlik Birimi</p>
-                        <p class="team-university">Siyaset Bilimi - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="events">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Etkinlik Sorumlusu">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Etkinlik Birimi</p>
-                        <p class="team-university">Turizm - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Üye İlişkileri (5 üye) -->
-                <div class="team-member" data-department="membership">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Üye İlişkileri">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Üye İlişkileri</p>
-                        <p class="team-university">Psikoloji - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="membership">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Üye İlişkileri">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Üye İlişkileri</p>
-                        <p class="team-university">İletişim Bilimleri - 4. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="membership">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Üye İlişkileri">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Üye İlişkileri</p>
-                        <p class="team-university">Halkla İlişkiler - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="membership">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Üye İlişkileri">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Üye İlişkileri</p>
-                        <p class="team-university">İnsan Kaynakları - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="membership">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Üye İlişkileri">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Üye İlişkileri</p>
-                        <p class="team-university">Sosyoloji - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Medya ve İletişim (5 üye) -->
-                <div class="team-member" data-department="media">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Medya ve İletişim">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Medya ve İletişim</p>
-                        <p class="team-university">Görsel İletişim Tasarımı - 4. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="media">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Medya ve İletişim">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Medya ve İletişim</p>
-                        <p class="team-university">Radyo, Televizyon ve Sinema - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="media">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Medya ve İletişim">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Medya ve İletişim</p>
-                        <p class="team-university">Dijital Pazarlama - 2. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="media">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_female.webp" alt="Medya ve İletişim">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jane Doe</h3>
-                        <p class="team-role">Medya ve İletişim</p>
-                        <p class="team-university">Fotoğrafçılık - 3. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member" data-department="media">
-                    <div class="team-img">
-                        <img src="Images/Team Members/empty_profile_male.webp" alt="Medya ve İletişim">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">John Doe</h3>
-                        <p class="team-role">Medya ve İletişim</p>
-                        <p class="team-university">İçerik Üretimi - 4. Sınıf</p>
-                        <div class="team-social">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.linkedin.com/in/eren-k%C3%B6%C3%A7men-466424273/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:kocmeneren@gmail.com" aria-label="mail-to"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -436,38 +126,18 @@
             </div>
 
             <div class="department-container">
-                <div class="department">
-                    <div class="department-icon">
-                        <i class="fas fa-pen-fancy"></i>
+                    <div class="department">
+                        <div class="department-icon"><i class="fas fa-users"></i></div>
+                        <h3>Duyuru </h3>
+                        <p>Birimlerimiz ve Yönetim Kurulu üyelerimiz yeni eğitim öğretim yılı başladıktan sonra güncellenecektir. İlginiz için teşekkür ederiz.</p>
                     </div>
-                    <h3>Yayın Birimi</h3>
-                    <p>Dergimizin içeriklerinin hazırlanması, düzenlenmesi ve yayına hazır hale getirilmesinden sorumludur. Akademik makalelerin değerlendirilmesi ve düzenlenmesi bu birim tarafından yapılır.</p>
-                </div>
-
-                <div class="department">
-                    <div class="department-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                
+                    <div class="department">
+                        <div class="department-icon"><i class="fas fa-users"></i></div>
+                        <h3>Yönetim</h3>
+                        <p>Yönetim birimi, kulübün işleyişinin kontrolünden sorumludur.</p>
                     </div>
-                    <h3>Etkinlik Birimi</h3>
-                    <p>Topluluğumuzun düzenlediği seminer, konferans, gezi ve diğer etkinliklerin planlanması ve organizasyonundan sorumludur. Etkinliklerin duyuruları ve kayıt işlemleri bu birim tarafından yürütülür.</p>
                 </div>
-
-                <div class="department">
-                    <div class="department-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Üye İlişkileri</h3>
-                    <p>Topluluğumuza yeni üyelerin kazandırılması, mevcut üyelerle iletişimin sürdürülmesi ve üyelerin etkinliklere katılımının sağlanmasından sorumludur.</p>
-                </div>
-
-                <div class="department">
-                    <div class="department-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>Medya ve İletişim</h3>
-                    <p>Topluluğumuzun sosyal medya hesaplarının yönetimi, etkinliklerin görsel kayıtlarının alınması ve topluluğumuzun tanıtım faaliyetlerinden sorumludur.</p>
-                </div>
-            </div>
         </div>
         <svg class="section-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#1C5D99" fill-opacity="0.5" d="M0,192L60,181.3C120,171,240,149,360,154.7C480,160,600,192,720,181.3C840,171,960,117,1080,117.3C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
@@ -503,7 +173,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h1>Hızlı Bağlantılar</h1>
+                    <h4>Hızlı Bağlantılar</h4>
                     <ul>
                         <li><a href="index.html">Ana Sayfa</a></li>
                         <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
@@ -514,7 +184,7 @@
                 </div>
 
                 <div class="footer-links">
-                    <h1>İletişim</h1>
+                    <h4>İletişim</h4>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Ankara Yıldırım Beyazıt Üniversitesi, Ankara</li>
                         <li><i class="fas fa-envelope"></i> aybuturkdunyasi@gmail.com</li>
@@ -523,7 +193,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 AYBÜ Türk Dünyası Gençlik Topluluğu. Tüm hakları saklıdır.</p>
+                <p>© 2025 AYBÜ Türk Dünyası Gençlik Topluluğu. Tüm hakları saklıdır.</p>
             </div>
         </div>
 
@@ -533,5 +203,6 @@
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
