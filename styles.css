@@ -712,7 +712,7 @@ a:hover {
 .magazine-cover {
   width: 300px;
   aspect-ratio: 3 / 2; /* 600 / 400 = 1.5 */
-  object-fit: cover; /* Optional: trims image to fill container */
+  object-fit: contain;
 }
 
 .magazine-cover:hover {
